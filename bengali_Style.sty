@@ -28,6 +28,12 @@
     \normalsize
 }
 
+% Ensure the bullet point matches the font and size of the text
+\renewcommand\labelitemi{\normalsize\textemdash} % Use an en-dash as a bullet
+
+% TODO
+% \renewcommand\labelitemi{\normalsize\text{\char"25CF}} % Use a white bullet
+
 % Mapping for Arabic numerals to Bengali numerals using \ifcase
 \newcommand{\mybengalinumber}[1]{%
   \ifcase#1 ০% 0
@@ -43,6 +49,11 @@
   \fi
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bengali citation number
+\usepackage{hyperref}
+\usepackage{etoolbox}
+\patchcmd{\bibcite}{#2}{\mybengalinumber{#2}}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Redefine section and subsection numbers to use Bengali numerals
 \renewcommand\thesection{\mybengalinumber{\value{section}}}
 \renewcommand\thesubsection{\mybengalinumber{\value{section}}.\mybengalinumber{\value{subsection}}}
@@ -80,3 +91,5 @@
   \ifnum\value{page}>9 \mybengalinumber{\numexpr(\value{page}/10)\relax - \value{page}/100*10\relax}\fi% Tens place if applicable
   \mybengalinumber{\numexpr\value{page} - \value{page}/10*10\relax}% Ones place
 }
+
+
