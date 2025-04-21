@@ -4,10 +4,10 @@
 
 - To change the compiler, simply click into the left hand menu: 
 
-![](first.png)
+![](null.png)
 
 - Click on the Compiler menu under Settings , and select `XeLaTex`: 
 
-![](second.png)
+![](first.png)
 
 ### TODO: will add more features (work-in-progress)
